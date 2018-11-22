@@ -1,0 +1,44 @@
+/*.heading{	
+	color: navy;
+/*	font-family: AR Darling;*
+	font-family: Lucida Bright;
+	font-weight: bold;
+}*/
+
+
+.nav-link{
+	color: white;
+}
+nav{ 
+	background: #FF0000;
+	}
+
+.aside {
+    /* this is the designated 'Sidebar' */
+    background: #F5F5DC;
+    color: #00008B;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: aktiv-grotesk-std,helvetica,arial,sans-serif;
+    height: 100%;
+    border-right: 1px solid #CACACA;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+	
+aside img {
+	margin-left: 25px;
+	margin-right: 25px;
+	width: 200px;
+	text-align: center;
+	border-radius: 0px;
+	}
+#menu{
+	
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+
+}

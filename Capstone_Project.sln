@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBModel", "DBModel\DBModel.csproj", "{2D09C483-1857-4B68-8D75-5E4F78155034}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAST_Alumni_Portal", "FAST_Alumni_Portal\FAST_Alumni_Portal.csproj", "{66E1E7F0-C026-4ECB-9D51-FB87345EC6E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal", "Portal\Portal.csproj", "{D78ED38F-535C-498D-A073-056DACF163BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D09C483-1857-4B68-8D75-5E4F78155034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D09C483-1857-4B68-8D75-5E4F78155034}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D09C483-1857-4B68-8D75-5E4F78155034}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D09C483-1857-4B68-8D75-5E4F78155034}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66E1E7F0-C026-4ECB-9D51-FB87345EC6E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66E1E7F0-C026-4ECB-9D51-FB87345EC6E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66E1E7F0-C026-4ECB-9D51-FB87345EC6E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66E1E7F0-C026-4ECB-9D51-FB87345EC6E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D78ED38F-535C-498D-A073-056DACF163BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D78ED38F-535C-498D-A073-056DACF163BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D78ED38F-535C-498D-A073-056DACF163BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D78ED38F-535C-498D-A073-056DACF163BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B92A7728-6A92-4FD3-B2D0-A329C4A7B048}
+	EndGlobalSection
+EndGlobal

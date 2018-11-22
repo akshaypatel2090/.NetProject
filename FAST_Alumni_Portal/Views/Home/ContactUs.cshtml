@@ -1,0 +1,59 @@
+﻿@model FAST_Alumni_Portal.Models.ContactUsModel
+
+<div class="row" style="height:80vh">
+    <div class="col-sm-3" style="height:79.9vh">
+        <div class="aside">
+            <br><br>
+            <p style="text-align:center"><b>Helping to connect alumni and faculty with the business community and job opportunities!</b></p>
+            <center>
+                <img src="~/images/website.png" class="img-fluid">
+            </center>
+            <h4 style="text-align:center">Sheridan | FAST</h4>
+
+            <hr class="d-sm-none">
+            <br><br><br><br>
+        </div>
+    </div>
+       
+    <div class="col-sm-9" style="margin-left:0px;">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <h4>Contact Us</h4>
+            <hr />
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.FromName, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.FromName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.FromName)
+                </div>
+                <br /><br />
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.FromEmail, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.FromEmail)
+                </div>
+                <br /><br />
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Message)
+                </div>
+              <br />
+            </div>
+            <br /><br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-default" value="Send" />
+                </div>
+            </div>
+        }
+    </div>
+            </div>
+

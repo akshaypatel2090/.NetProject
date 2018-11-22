@@ -1,0 +1,98 @@
+﻿@model FAST_Alumni_Portal.Models.UserInfo
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>User Profile</title>
+</head>
+<body >
+    <table style="width:100%;border:0px">
+        <tr>
+            <td><img src="@Html.DisplayFor(model => model.PictureUrl)" /></td>
+            <td>
+                <i style="font-size:23px">@Html.DisplayFor(model => model.EmailAddress)</i>
+               <!-- <a href="~/Myaccount/SignOut" style="border:1px dashed yellow;border-radius:4px;padding:8px;color:orange;font-size:17px">SignOut</a>-->
+                <p>
+                    <b >Summary : </b>@Html.DisplayFor(model => model.Summary)
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div>
+                    <p>
+                        <b > First Name : </b>@Html.DisplayFor(model => model.FirstName)
+                    </p>
+                    <p>
+                        <b > Maiden Name :</b> @Html.DisplayFor(model => model.MaidenName)
+                    </p>
+                    <p>
+                        <b > Last Name : </b> @Html.DisplayFor(model => model.LastName)
+                    </p>
+                    <p>
+                        <b >Formatted Name :</b> @Html.DisplayFor(model => model.FormattedName)
+                    </p>
+                    <p>
+                        <b > HeadLine : </b> @Html.DisplayFor(model => model.Headline)
+                    </p>
+                    <p>
+                        <b > Public Profile Url : </b><a href="@Html.DisplayFor(model => model.PublicProfileUrl)">@Html.DisplayFor(model => model.PublicProfileUrl)</a>
+                    </p>
+                    <p>
+                        <b > Industry :</b> @Html.DisplayFor(model => model.Industry)
+                    </p>
+                    <p>
+                        <b > Connections : </b> @Html.DisplayFor(model => model.NumConnections)
+                    </p>
+                    <p>
+                        <b> Connections capped :</b> @Html.DisplayFor(model => model.NumConnectionsCapped)
+                    </p>
+
+                </div>
+            </td>
+        </tr>
+        @if (Model.Positions != null)
+        {
+            <tr>
+                <td></td>
+                <td>
+                    <div>
+                        <b>Positions: </b>
+                        <p>Total : @Model.Positions.Total</p>
+                        @if (Model.Positions.Values != null)
+                        {
+                            foreach (var data in Model.Positions.Values)
+                            {
+                                <div style="padding:20px;border:1px dotted white;border-bottom:1px dotted white;">
+                                    <p><b style="color:antiquewhite">Id :</b> @data.Id</p>
+                                    <p><b style="color:antiquewhite">Company :</b> @data.Company.Name | Industry : @data.Company.Industry | Id : @data.Company.Id | Size :@data.Company.Size | Type: @data.Company.Type</p>
+
+                                    <p><b style="color:antiquewhite">IsCurrent :</b>@data.IsCurrent</p>
+                                    <p><b style="color:antiquewhite">Location :</b> @data.Location.Country.Code | @data.Location.Country.Name</p>
+                                    <p><b style="color:antiquewhite">Start Date :</b> Month : @data.StartDate.Month | Year : @data.StartDate.Year</p>
+                                    <p><b style="color:antiquewhite">Title :</b>@data.Title</p>
+                                </div>
+                            }
+                        }
+                    </div>
+                </td>
+            </tr>
+        }
+
+      
+    </table>
+
+
+
+
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Savedetails","Account")'" style="background-color: black">Sign Up</button>
+
+
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="students" EntityType="Model1.Store.students" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="admins" EntityType="Model1.Store.admins" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="linkedinAccounts" EntityType="Model1.Store.linkedinAccounts" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="studentlinkedinAccount" Association="Model1.Store.studentlinkedinAccount">
+      <End Role="student" EntitySet="students" />
+      <End Role="linkedinAccount" EntitySet="linkedinAccounts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="students">
+    <Key>
+      <PropertyRef Name="record_id" />
+    </Key>
+    <Property Name="record_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="alumni_id" Type="int" Nullable="false" />
+    <Property Name="firstname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="lastname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="primaryemail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="secondaryemail" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Campus" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="linkedinacct" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="skill_1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="skill_2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="skill_3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="programfast" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="currentposition" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="graduationdate" Type="datetime" Nullable="true" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="comment" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Id_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="admins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="linkedinAccounts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="lastname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="url" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="posiitons" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="imgurl" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="studentlinkedinAccount">
+    <End Role="student" Type="Model1.Store.students" Multiplicity="*" />
+    <End Role="linkedinAccount" Type="Model1.Store.linkedinAccounts" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="linkedinAccount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="Id_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="students" EntityType="Model1.student" />
+          <EntitySet Name="admins" EntityType="Model1.admin" />
+          <EntitySet Name="linkedinAccounts" EntityType="Model1.linkedinAccount" />
+          <AssociationSet Name="studentlinkedinAccount" Association="Model1.studentlinkedinAccount">
+            <End Role="student" EntitySet="students" />
+            <End Role="linkedinAccount" EntitySet="linkedinAccounts" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="student">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="alumni_id" Type="Int32" Nullable="false" />
+          <Property Name="firstname" Type="String" Nullable="false" />
+          <Property Name="lastname" Type="String" Nullable="false" />
+          <Property Name="primaryemail" Type="String" Nullable="false" />
+          <Property Name="secondaryemail" Type="String" Nullable="true" />
+          <Property Name="Campus" Type="String" Nullable="true" />
+          <Property Name="linkedinacct" Type="String" Nullable="false" />
+          <Property Name="skill_1" Type="String" Nullable="false" />
+          <Property Name="skill_2" Type="String" Nullable="false" />
+          <Property Name="skill_3" Type="String" Nullable="false" />
+          <Property Name="programfast" Type="String" Nullable="true" />
+          <Property Name="currentposition" Type="String" Nullable="false" />
+          <Property Name="graduationdate" Type="DateTime" Nullable="true" />
+          <Property Name="password" Type="String" Nullable="false" />
+          <Property Name="comment" Type="String" Nullable="true" />
+          <NavigationProperty Name="Id" Relationship="Model1.studentlinkedinAccount" FromRole="student" ToRole="linkedinAccount" />
+        </EntityType>
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" Nullable="false" />
+          <Property Name="password" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="linkedinAccount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstname" Type="String" Nullable="false" />
+          <Property Name="lastname" Type="String" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" />
+          <Property Name="url" Type="String" Nullable="false" />
+          <Property Name="posiitons" Type="String" Nullable="false" />
+          <Property Name="imgurl" Type="String" Nullable="false" />
+          <NavigationProperty Name="linkedinacct" Relationship="Model1.studentlinkedinAccount" FromRole="linkedinAccount" ToRole="student" />
+        </EntityType>
+        <Association Name="studentlinkedinAccount">
+          <End Type="Model1.student" Role="student" Multiplicity="1" />
+          <End Type="Model1.linkedinAccount" Role="linkedinAccount" Multiplicity="1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.student)">
+        <MappingFragment StoreEntitySet="students">
+          <ScalarProperty Name="record_id" ColumnName="record_id" />
+          <ScalarProperty Name="alumni_id" ColumnName="alumni_id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="primaryemail" ColumnName="primaryemail" />
+          <ScalarProperty Name="secondaryemail" ColumnName="secondaryemail" />
+          <ScalarProperty Name="Campus" ColumnName="Campus" />
+          <ScalarProperty Name="linkedinacct" ColumnName="linkedinacct" />
+          <ScalarProperty Name="skill_1" ColumnName="skill_1" />
+          <ScalarProperty Name="skill_2" ColumnName="skill_2" />
+          <ScalarProperty Name="skill_3" ColumnName="skill_3" />
+          <ScalarProperty Name="programfast" ColumnName="programfast" />
+          <ScalarProperty Name="currentposition" ColumnName="currentposition" />
+          <ScalarProperty Name="graduationdate" ColumnName="graduationdate" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admins">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.admin)">
+        <MappingFragment StoreEntitySet="admins">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="linkedinAccounts">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.linkedinAccount)">
+        <MappingFragment StoreEntitySet="linkedinAccounts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="posiitons" ColumnName="posiitons" />
+          <ScalarProperty Name="imgurl" ColumnName="imgurl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="studentlinkedinAccount" TypeName="Model1.studentlinkedinAccount" StoreEntitySet="students">
+      <EndProperty Name="linkedinAccount">
+        <ScalarProperty Name="Id" ColumnName="Id_Id" />
+      </EndProperty>
+      <EndProperty Name="student">
+        <ScalarProperty Name="record_id" ColumnName="record_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

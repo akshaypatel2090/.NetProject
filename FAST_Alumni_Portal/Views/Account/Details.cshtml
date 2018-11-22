@@ -1,0 +1,138 @@
+﻿@model DBModel.student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.alumni_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alumni_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.primaryemail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.primaryemail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.secondaryemail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.secondaryemail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Campus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Campus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.linkedinacct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.linkedinacct)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.skill_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.skill_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.skill_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.skill_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.skill_3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.skill_3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.programfast)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.programfast)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.currentposition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.currentposition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.graduationdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.graduationdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.record_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
