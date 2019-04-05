@@ -9,7 +9,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
+    
 <div class="form-horizontal">
     <h4>student</h4>
     <hr />
@@ -24,6 +24,34 @@
         </div>
     </div>
 
+    <div class="form-group">
+        @Html.LabelFor(model => model.linkedinAccount.firstname, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.linkedinAccount.firstname, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.linkedinAccount.firstname, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.linkedinAccount.lastname, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.linkedinAccount.lastname, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.linkedinAccount.lastname, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.linkedinAccount.email, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.linkedinAccount.email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.linkedinAccount.email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.linkedinAccount.positions, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.linkedinAccount.positions, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.linkedinAccount.positions, "", new { @class = "text-danger" })
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.secondaryemail, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -96,35 +124,6 @@
         </div>
     </div>
 
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.linkedinAccount.firstname, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.linkedinAccount.firstname, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.linkedinAccount.firstname, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.linkedinAccount.lastname, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.linkedinAccount.lastname, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.linkedinAccount.lastname, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.linkedinAccount.email, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.linkedinAccount.email, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.linkedinAccount.email, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-
-
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Save" class="btn btn-default" />
@@ -134,5 +133,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to Page", "studentlogin1")
+    @Html.ActionLink("Back to List", "Index")
 </div>

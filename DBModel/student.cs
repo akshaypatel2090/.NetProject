@@ -16,21 +16,16 @@ namespace DBModel
     {
         public int record_id { get; set; }
         public int alumni_id { get; set; }
-        public string firstname { get; set; }
-        public string lastname { get; set; }
-        public string primaryemail { get; set; }
         public string secondaryemail { get; set; }
         public string Campus { get; set; }
-        public string linkedinacct { get; set; }
         public string skill_1 { get; set; }
         public string skill_2 { get; set; }
         public string skill_3 { get; set; }
         public string programfast { get; set; }
-        public string currentposition { get; set; }
         public Nullable<System.DateTime> graduationdate { get; set; }
         public string password { get; set; }
         public string comment { get; set; }
     
-        public virtual linkedinAccount Id { get; set; }
+        public virtual linkedinAccount linkedinAccount { get; set; }
     }
 }

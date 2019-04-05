@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using FAST_Alumni_Portal.Utils;
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -11,8 +12,8 @@
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>-->
-    
-        
+
+
 </head>
 
 <body>
@@ -30,13 +31,23 @@
                 @Html.ActionLink("FAST ALUMNI PORTAL", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav" >
+                <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
                     <!--  <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>-->
                     <li>@Html.ActionLink("About Us", "AboutUs", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("My Account", "MyAccount", "Home", new { area = "" }, null)</li>
+                   <!-- <li>@Html.ActionLink("My Account", "MyAccount", "Account", new { area = "" }, null)</li>-->
                     <li>@Html.ActionLink("Contact Us", "ContactUs", "Home", new { area = "" }, null)</li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=@AppConfig.Get("Linkedin.ClientID")&redirect_uri=@AppConfig.Get("Linkedin.RedirectUrlazure")&state=987654321&scope=r_emailaddress%20r_basicprofile">
+                            <span class="glyphicon glyphicon-user"></span> Sign Up
+                        </a>
+                    </li>
+                    <li>@Html.ActionLink(" LogIn", "studentlogin1", "Account", new { area = "" }, new { @class = "glyphicon glyphicon-log-in" })</li>
+
+                </ul>
+
             </div>
         </div>
     </div>
@@ -44,7 +55,20 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <div class="row">
+                <div class="col-sm-4">
+                    <a href="https://www.youtube.com/user/SheridanInstitute" target="_blank">Sheridan College on YouTube</a>
+                    <p>https://www.youtube.com/user/SheridanInstitute</p>
+                </div>
+                <div class="col-sm-8" style="text-align:right">
+                    <a href="https://www.facebook.com/login" target="_blank"><img src="~/images/Facebook.png" width="95" height="25" alt="Facebook Hompage" /></a> &nbsp;
+                    <a href="https://twitter.com/login " target="_blank"><img src="~/images/Twitter.png" width="95" height="25" alt="Twitter Homepage" /></a> &nbsp;
+                    <a href="https://www.linkedin.com/uas/login?trk=hb_signin" target="_blank"><img src="~/images/LinkedIn.png" width="95" height="25" alt="LinkedIn Homepage" /></a>&nbsp;
+                    <br>
+                    <b><small>@Html.ActionLink(" Administrative Login", "adminlogin", "Admin", new { area = "" },null)</small></b>
+                </div>
+            </div>
+
         </footer>
     </div>
 

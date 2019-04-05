@@ -9,15 +9,15 @@
     <meta name="viewport" content="width=device-width" />
     <title>User Profile</title>
 </head>
-<body >
-    <table style="width:100%;border:0px">
+<body>
+    <table style="width:100%;border:0px" hidden>
         <tr>
             <td><img src="@Html.DisplayFor(model => model.PictureUrl)" /></td>
             <td>
                 <i style="font-size:23px">@Html.DisplayFor(model => model.EmailAddress)</i>
-               <!-- <a href="~/Myaccount/SignOut" style="border:1px dashed yellow;border-radius:4px;padding:8px;color:orange;font-size:17px">SignOut</a>-->
+                <!-- <a href="~/Myaccount/SignOut" style="border:1px dashed yellow;border-radius:4px;padding:8px;color:orange;font-size:17px">SignOut</a>-->
                 <p>
-                    <b >Summary : </b>@Html.DisplayFor(model => model.Summary)
+                    <b>Summary : </b>@Html.DisplayFor(model => model.Summary)
                 </p>
             </td>
         </tr>
@@ -26,28 +26,28 @@
             <td>
                 <div>
                     <p>
-                        <b > First Name : </b>@Html.DisplayFor(model => model.FirstName)
+                        <b> First Name : </b>@Html.DisplayFor(model => model.FirstName)
                     </p>
                     <p>
-                        <b > Maiden Name :</b> @Html.DisplayFor(model => model.MaidenName)
+                        <b> Maiden Name :</b> @Html.DisplayFor(model => model.MaidenName)
                     </p>
                     <p>
-                        <b > Last Name : </b> @Html.DisplayFor(model => model.LastName)
+                        <b> Last Name : </b> @Html.DisplayFor(model => model.LastName)
                     </p>
                     <p>
-                        <b >Formatted Name :</b> @Html.DisplayFor(model => model.FormattedName)
+                        <b>Formatted Name :</b> @Html.DisplayFor(model => model.FormattedName)
                     </p>
                     <p>
-                        <b > HeadLine : </b> @Html.DisplayFor(model => model.Headline)
+                        <b> HeadLine : </b> @Html.DisplayFor(model => model.Headline)
                     </p>
                     <p>
-                        <b > Public Profile Url : </b><a href="@Html.DisplayFor(model => model.PublicProfileUrl)">@Html.DisplayFor(model => model.PublicProfileUrl)</a>
+                        <b> Public Profile Url : </b><a href="@Html.DisplayFor(model => model.PublicProfileUrl)">@Html.DisplayFor(model => model.PublicProfileUrl)</a>
                     </p>
                     <p>
-                        <b > Industry :</b> @Html.DisplayFor(model => model.Industry)
+                        <b> Industry :</b> @Html.DisplayFor(model => model.Industry)
                     </p>
                     <p>
-                        <b > Connections : </b> @Html.DisplayFor(model => model.NumConnections)
+                        <b> Connections : </b> @Html.DisplayFor(model => model.NumConnections)
                     </p>
                     <p>
                         <b> Connections capped :</b> @Html.DisplayFor(model => model.NumConnectionsCapped)
@@ -84,15 +84,113 @@
             </tr>
         }
 
-      
+
     </table>
+    <img src="@Html.DisplayFor(model => model.PictureUrl)" />
+    <form action="SaveLinkedinData" method="post">
+        <div class="form-group">
+            <label for="studentnumber">Student Number:</label>
+            <input type="number" class="form-control" id="studentnumber" name="studentnumber" placeholder="Student Number" style="width:50%" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Create a Password" style="width:50%" required>
+        </div>
+        <div class="form-group">
+            <label for="FirstName">First Name:</label>
+            <input type="text" class="form-control" id="FirstName" name="Firstname" value=@Html.DisplayFor(model => model.FirstName) style="width:50%" required>
+        </div>
+        <div class="form-group">
+            <label for="LastName">Last Name:</label>
+            <input type="text" class="form-control" id="LastName" name="LastName" value=@Html.DisplayFor(model => model.LastName) style="width:50%" required>
+        </div>
+        <div class="form-group">
+            <label for="pemail">Primary Email</label>
+            <input type="email" id="pemail" class="form-control" name="pemail" value=@Html.DisplayFor(model => model.EmailAddress) style="width:50%" required>
+        </div>
+        <div class="form-group">
+            <label for="semail">Secondary Email</label>
+            <input type="email" id="semail" class="form-control" name="semail" placeholder="Enter your Secondary Email" style="width:50%" required>
+        </div>
+        <div class="form-group">
+            <label for="Program_Fast_Name">Program:</label>
+            <select class="form-control" name="Program_Fast_Name" placeholder="Select" required="required" style="width:50%">
+                <option selected>SELECT</option>
+                <option value="Advanced Manufacturing Management">Advanced Manufacturing Management</option>
+                <option value="Apprenticeship Training Programs">Apprenticeship Training Programs</option>
+                <option value="Architectural Technician/Technology">Architectural Technician/Technology</option>
+                <option value="Bachelor of Computing and Network Communications (Honours) – Internet Communications Technology">Bachelor of Computing and Network Communications (Honours) – Internet Communications Technology</option>
+                <option value="Chemical Engineering Technology">Chemical Engineering Technology</option>
+                <option value="Chemical Engineering Technology – Environmental">Chemical Engineering Technology – Environmental</option>
+                <option value="Chemical Laboratory Technician">Chemical Laboratory Technician</option>
+                <option value="Computer Engineering Technician/Technology">Computer Engineering Technician/Technology</option>
+                <option value="Computer Programmer">Computer Programmer</option>
+                <option value="Computer Systems Technician – Software Engineering">Computer Systems Technician – Software Engineering</option>
+                <option value="Computer Systems Technology – Software Development and Network Engineering">Computer Systems Technology – Software Development and Network Engineering</option>
+                <option value="Computer Systems Technology – Systems Analyst">Computer Systems Technology – Systems Analyst</option>
+                <option value="Electrical Engineering Technician">Electrical Engineering Technician</option>
+                <option value="Electrical Techniques">Electrical Techniques</option>
+                <option value="Electromechanical Engineering Technician/Technology">Electromechanical Engineering Technician/Technology</option>
+                <option value="Electronics Engineering Technician/Technology">Electronics Engineering Technician/Technology</option>
+                <option value="Environmental Control">Environmental Control</option>
+                <option value="Environmental Technician">Environmental Technician</option>
+                <option value="Game Development – Advanced Programming">Game Development – Advanced Programming</option>
+                <option value="Information Systems Security, Honours Bachelor of Applied Information Sciences">Information Systems Security, Honours Bachelor of Applied Information Sciences</option>
+                <option value="Information Technologies Support Services">Information Technologies Support Services</option>
+                <option value="Interactive Media Management">Interactive Media Management</option>
+                <option value="Internet Communications Technology">Internet Communications Technology</option>
+                <option value="Mechanical Engineering Technician/Technology">Mechanical Engineering Technician/Technology</option>
+                <option value="Mechanical Engineering Technician/Technology – Design & Drafting">Mechanical Engineering Technician/Technology – Design & Drafting</option>
+                <option value="Mechanical Engineering, Bachelor of Engineering">Mechanical Engineering, Bachelor of Engineering</option>
+                <option value="Mobile Computing, Honours Bachelor of Computer Science">Mobile Computing, Honours Bachelor of Computer Science</option>
+                <option value="Plumbing, Mechanical Techniques">Plumbing, Mechanical Techniques</option>
+                <option value="Quality Assurance – Manufacturing and Management">Quality Assurance – Manufacturing and Management</option>
+                <option value="Technology Fundamentals">Technology Fundamentals</option>
+                <option value="VTool and Die Maker, Mechanical Techniques">VTool and Die Maker, Mechanical Techniques</option>
+                <option value="Tool Making, Mechanical Technician">Tool Making, Mechanical Technician</option>
+                <option value="Welding and Fabrication Technician/Welding Techniques">Welding and Fabrication Technician/Welding Techniques</option>
+            </select>
+
+        </div>
+        <div class="form-group">
+            <label for="date">Graduation Date</label>
+            <input type="date" class="form-control" id="date" name="date" style="width:50%" required>
+        </div>
+        <div class="form-group">
+            <label for="campus">Campus</label>
+            <input type="text" class="form-control" id="campus" name="campus" placeholder="Davis/Traflagar/HMC" style="width:50%" required>
+        </div>
+        <div class="form-group">
+            <label for="s1">Skill-1</label>
+            <input type="text" class="form-control" id="s1" name="s1" placeholder="Skill-1" style="width:50%" required>
+        </div>
+        <div class="form-group">
+            <label for="s2">Skill-2</label>
+            <input type="text" id="s2" class="form-control" name="s2" placeholder="Skill-2" style="width:50%" required>
+        </div>
+        <div class="form-group">
+            <label for="s3">Skill-3</label>
+            <input type="text" class="form-control" id="s3" name="s3" placeholder="Skill-1" style="width:50%" required>
+        </div>
+        <div class="form-group">
+            <label for="url">LinkedIn Url</label>
+            <input type="text" id="s2url" class="form-control" name="url" value=@Html.DisplayFor(model => model.PublicProfileUrl) style="width:50%" required>
+        </div>
+        <div class="form-group" hidden>
+            <label for="url">Public Profile Url</label>
+            <input type="text" id="picurl" class="form-control" name="picurl" value=@Html.DisplayFor(model => model.PictureUrl) style="width:50%">
+        </div>
+        <div class="form-group">
+            <label for="position">LinkedIn HeadLine</label>
+            <input type="text" id="s2url" class="form-control" name="url" value=@Html.DisplayFor(model => model.Headline) style="width:50%" required>
+        </div>
+        <button type="submit" name="sub" class="btn btn-primary" style="background-color:black">Submit</button> &nbsp;
+        <button type="Reset" class="btn btn-primary" style="background-color:black">Cancel</button>&nbsp;
+    </form>
 
 
 
-
-    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Savedetails","Account")'" style="background-color: black">Sign Up</button>
-
-
+    <!-- <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Create","Account")'" style="background-color: black">Sign Up</button>  -->
 
 </body>
 </html>

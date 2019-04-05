@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="dc10c936ee564ccfbaeeb8a4001d8787" Name="Diagram1" >
-        <EntityTypeShape EntityType="Model1.student" Width="1.5" PointX="7" PointY="1.875" />
-        <EntityTypeShape EntityType="Model1.admin" Width="1.5" PointX="10.25" PointY="2.375" />
-        <EntityTypeShape EntityType="Model1.linkedinAccount" Width="2.25" PointX="3.125" PointY="1.875" />
+        <EntityTypeShape EntityType="Model1.student" Width="1.5" PointX="7.125" PointY="2.25" />
+        <EntityTypeShape EntityType="Model1.admin" Width="1.5" PointX="9.25" PointY="2.25" />
+        <EntityTypeShape EntityType="Model1.linkedinAccount" Width="2.25" PointX="4.125" PointY="2.25" />
         <AssociationConnector Association="Model1.studentlinkedinAccount" />
       </Diagram>
     </edmx:Diagrams>

@@ -1,18 +1,88 @@
-﻿@using FAST_Alumni_Portal.Utils;
+﻿@model IEnumerable<DBModel.student>
 
+@{
+    ViewBag.Title = "Index";
+}
 
+<h2>Index</h2>
 
-<!DOCTYPE html>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.alumni_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.secondaryemail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Campus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.skill_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.skill_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.skill_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.programfast)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.graduationdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comment)
+        </th>
+        <th></th>
+    </tr>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Login</title>
-</head>
-<body style="background-color:#f3f3f3;">
-    <div style="align-items:center;align-items:center;padding:50px;border:1px double #3d2487;width:260px;background-color:white">
-        <h2>Hi Guest</h2>
-     
-    </div>
-</body>
-</html>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.alumni_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.secondaryemail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Campus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.skill_1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.skill_2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.skill_3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.programfast)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.graduationdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.comment)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.record_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.record_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.record_id })
+            </td>
+        </tr>
+    }
+
+</table>

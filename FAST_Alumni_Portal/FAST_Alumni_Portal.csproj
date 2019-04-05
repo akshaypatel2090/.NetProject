@@ -193,6 +193,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -223,6 +224,7 @@
     <Content Include="images\FAST-Alumni_logo.png" />
     <Content Include="images\FASTASMP_logo.png" />
     <Content Include="images\fast_alumni_logo.PNG" />
+    <Content Include="images\Linkedin-signin.png" />
     <Content Include="images\LinkedIn.png" />
     <Content Include="images\Linkedin_signup.png" />
     <Content Include="images\Twitter.png" />
@@ -251,6 +253,9 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\AlumniPortal2018 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FASTAlumniPortal - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FASTAlumniPortal20181125113216 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -259,7 +264,9 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="styles\styles.css" />
     <Content Include="styles\styles4.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -277,13 +284,20 @@
     <Content Include="Views\Home\MyAccount.cshtml" />
     <Content Include="Views\Home\ContactUs.cshtml" />
     <Content Include="Views\Home\SendEmail.cshtml" />
-    <Content Include="Views\Account\Create.cshtml" />
     <Content Include="Views\Account\Delete.cshtml" />
     <Content Include="Views\Account\Details.cshtml" />
     <Content Include="Views\Account\Edit.cshtml" />
-    <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\User.cshtml" />
-    <Content Include="Views\Account\SaveDetails.cshtml" />
+    <Content Include="Views\Account\MyAccount.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\admin\Create.cshtml" />
+    <Content Include="Views\admin\Delete.cshtml" />
+    <Content Include="Views\admin\Details.cshtml" />
+    <Content Include="Views\admin\Edit.cshtml" />
+    <Content Include="Views\admin\Index.cshtml" />
+    <Content Include="Views\Account\studentlogin1.cshtml" />
+    <Content Include="Views\Shared\adminCreate.cshtml" />
+    <Content Include="Views\admin\adminlogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

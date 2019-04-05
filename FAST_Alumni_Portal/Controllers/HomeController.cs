@@ -1,4 +1,5 @@
-﻿using FAST_Alumni_Portal.Models;
+﻿using DBModel;
+using FAST_Alumni_Portal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace FAST_Alumni_Portal.Controllers
 {
     public class HomeController : Controller
     {
+        private Model1Container db = new Model1Container();
+
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
@@ -75,18 +78,7 @@ namespace FAST_Alumni_Portal.Controllers
             }
             return View(model);
         }
-/*
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult MyAccount(LogInModel u)
-        {
-            // this action is for handle post (login)
-            if (ModelState.IsValid) // this is check validity
-            {
-                
-            }
-            return View(u);
-        }*/
 
+       
     }
 }

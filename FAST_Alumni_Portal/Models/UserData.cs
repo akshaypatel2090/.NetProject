@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-
+using DBModel;
 namespace FAST_Alumni_Portal.Models
 {
 
@@ -120,6 +120,8 @@ namespace FAST_Alumni_Portal.Models
 
     public class UserInfo
     {
+        
+
         [JsonProperty(PropertyName = "apiStandardProfileRequest")]
         public ApiStandardProfileRequest ApiStandardProfileRequest { get; set; }
 
@@ -170,5 +172,8 @@ namespace FAST_Alumni_Portal.Models
 
         [JsonProperty(PropertyName = "summary")]
         public string Summary { get; set; }
+
+        public student student { get; set; }
+
     }
 }

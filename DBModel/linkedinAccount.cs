@@ -14,14 +14,14 @@ namespace DBModel
     
     public partial class linkedinAccount
     {
-        public int Id { get; set; }
+        public int linkedinAccount_Id { get; set; }
         public string firstname { get; set; }
         public string lastname { get; set; }
         public string email { get; set; }
         public string url { get; set; }
-        public string posiitons { get; set; }
+        public string positions { get; set; }
         public string imgurl { get; set; }
     
-        public virtual student linkedinacct { get; set; }
+        public virtual student student { get; set; }
     }
 }
